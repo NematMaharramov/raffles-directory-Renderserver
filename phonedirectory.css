@@ -34,8 +34,9 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body {
+  
   margin: 0; padding: 0;
-  height: 100%; overflow: hidden;   /* full-screen layout — only table scrolls */
+  height: 100%; overflow-x: hidden; overflow-y: auto;   /* full-screen layout — only table scrolls */
   font-family: 'Jost', 'Segoe UI', sans-serif;
   font-size: 14px;
   background: var(--warm-bg);
@@ -49,7 +50,7 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   padding: 0;
 }
 
@@ -57,6 +58,8 @@ html, body {
    HEADER — sticky top, never scrolls
 ════════════════════════════════════════════════════ */
 .site-header {
+  position: sticky;
+  top: 0;
   flex-shrink: 0;
   padding: 10px 24px 0;
   background: var(--warm-bg);
